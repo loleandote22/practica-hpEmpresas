@@ -1,0 +1,13 @@
+{
+    "fuente":[
+        "Country",
+        "Time",
+        "Value",
+        "Unit"
+    ],
+    "destino":[
+        "Fecha",
+        "Valor",
+        "Cantidad"
+    ]
+}

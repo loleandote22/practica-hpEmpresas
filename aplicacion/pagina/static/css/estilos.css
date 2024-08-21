@@ -1,0 +1,74 @@
+.navbar {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5)); /* Degradado de blanco con 80% de opacidad a blanco con 50% de opacidad */
+}
+
+
+
+.nav-link:hover {
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 1400% 1400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-text 10s ease infinite;
+}
+
+@keyframes rainbow-text {
+    0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+.image-section {
+  position: relative;
+  display: inline-block; 
+  width: 100%; /* Ancho de la ventana */
+  height: 100vh; /* Alto de la ventana */
+  margin-bottom: -6px; /* Para asegurarse de que no haya espacio entre las imágenes */
+  padding: 0;
+  margin-left: 0;
+  overflow: hidden; /* Para asegurarse de que la imagen no se desborde */
+}
+
+.image-section img {
+  width: 100%;
+  height: 100%;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 26, 26, 0.6); /* Fondo gris con opacidad para el difuminado */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding-left: 5%;
+    color: white; /* Color del texto para que sea visible sobre el fondo gris */
+    text-align: left;
+  }
+
+.text-overlay button {
+    background: white;
+    color: #016a7f;
+    border: none;
+    align-self: flex-start; /* Alinear el botón a la izquierda */
+  }
+  .text-overlay a {
+    background: white;
+    color: #016a7f;
+    border: none;
+    align-self: flex-start; /* Alinear el botón a la izquierda */
+  }
+
+.text-overlay p {
+    max-width: 50%;
+}

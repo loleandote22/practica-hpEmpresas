@@ -1,0 +1,11 @@
+services:
+  myservice:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - almacenardatos_kafka_red
+
+networks:
+  almacenardatos_kafka_red:
+    external: true

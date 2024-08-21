@@ -1,0 +1,24 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mi_mongodb_cont
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - kafka_red
+  obtener:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - kafka_red
+
+
+volumes:
+  mongo_data:
+
+networks:
+  kafka_red:
+    external: true

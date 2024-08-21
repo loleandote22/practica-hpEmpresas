@@ -1,0 +1,51 @@
+Australia,Canberra,All ordinaries
+Austria,Vienna,Austrian Traded Index in EUR
+Belgium,Brussels,BEL 20
+Canada,Ottawa,S&P/TSX Composite index
+Chile,Santiago,S&P IPSA
+Colombia,Bogotá,S&P Colombia Select Index
+Costa Rica,San José,Costa Rica Inversiones SICAV S.A.
+Czech Republic,Prague,NASDAQ Czech Republic Index
+Denmark,Copenhagen,OMX Copenhagen 25
+Estonia,Tallin,Tallinn SE General
+Finland,Helsinki,OMX Helsinki 25
+France,Paris,CAC 40
+Germany,Berlin,DAX
+Greece,Athens,Athens General Composite
+Hungary,Budapest,Budapest Stock Index
+Iceland,Reykjavík,ICEX Main
+Ireland,Dublin,ISEQ All Share
+Italy,Rome,FTSE Italia All Share
+Japan,Tokyo,Nikkei 225
+Korea,Seoul,KOSPI
+Latvia,Riga,Riga General
+Lithuania,Vilnius,Vilnius SE General
+Mexico,Mexico City,IPC Mexico
+Netherlands,Amsterdam,AEX
+New Zealand,Wellington,NZX 50
+Norway,Oslo,Oslo OBX
+Poland,Warsaw,WIG30
+Portugal,Lisbon,PSI
+Slovakia,Bratislava,SAX
+Slovenia,Ljubljana,Blue-Chip SBITOP
+Spain,Madrid,IBEX 35
+Sweden,Stockholm,OMXS30
+Switzerland,Bern,SMI
+Republic of Turkiye,Ankara,BIST 100
+United Kingdom,London,FTSE 100
+United States,Washington D.C.,S&P 500
+OECD Americas,Sin capital,Dow Jones Americas Index
+OECD Asia Oceania,Sin capital,Matthews Pacific Tiger Active ETF
+OECD Europe,Sin capital,ESTX 50 PR.EUR
+OECD Total,Sin capital,ING WORLD 30/70 D EUR Acc
+IEA Total,Sin capital,ING WORLD 30/70 D EUR Acc
+Argentina,Buenos Aires,S&P Merval
+Brazil,Brasília,Bovespa
+Bulgaria,Sofia,BSE SOFIX
+People's Republic of China,Beijing,Shanghai
+Croatia,Zagreb,CROBEX
+Cyprus,Nicosia,Cyprus Main Market
+India,New Delhi,NIFTY 50
+Malta,Valletta,MSE
+Romania,Bucharest,BET
+Serbia,Belgrade,Belex 15

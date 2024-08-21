@@ -1,0 +1,13 @@
+services:
+  apises:
+    container_name: fuente_api
+    build:
+      context: .
+    networks:
+      - kafka_red
+    
+    ports:
+      - "5001:5000"
+networks:
+  kafka_red:
+    external: true

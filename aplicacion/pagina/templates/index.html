@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Meta tags -->
+  <meta charset="UTF-8">
+  <meta name="author" content="loleandote" />
+  <meta name="description" content="pagina de las apis" />
+  <meta name="keywords" content="apis, desarrollo, programacion" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mi pagina</title>
+  <!-- Boostrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='imagenes/beneficios.svg')}}">
+  <link href="{{ url_for('static', filename='css/estilos.css') }}" rel="stylesheet">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler"
+        aria-controls="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-toggler">
+        <ul class="navbar-nav d-flex justify-content-center align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="#carbon">Carbón</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#eolica">Eólica</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gas-natural">Gas Natual</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#hidraulica">Hidráulica</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#nuclear">Nuclear</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#petroleo">Petroleo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#solar">Solar</a>
+          </li>
+        </ul>
+        <div id="caja">
+          <div id="g_id_onload"
+            data-client_id="731724841818-fv7v54nb8gk2vh5bgecp9qfr41nq4odj.apps.googleusercontent.com"
+            data-callback="hacer2">
+          </div>
+          <div class="g_id_signin" data-type="standard"></div>
+        </div>
+        <div id="caja2">
+          <button id="logout-button" onclick="signOut()">Logout</button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </nav>
+  <!-- <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#elemento-150">Action</a></li>
+                    <li><a class="dropdown-item" href="pruas.html">Another action</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form> -->
+  <!-- Imagen insertada -->
+  <section id="carbon" class="image-section">
+    <img src="{{url_for('static', filename='imagenes/carbon.webp')}}" alt="Imagen de carbon" class="img-fluid">
+    <div class="text-overlay">
+      <h3>Carbón, turba y gases industriales</h3>
+      <p>El carbón es una fuente de energía fósil que ha sido fundamental para la revolución industrial, mientras que la
+        turba, una forma temprana de carbón, se usa a menudo como combustible y en jardinería. Los gases industriales,
+        como el dióxido de carbono y el metano, son subproductos de la combustión del carbón y otros procesos
+        industriales.</p>
+      <a href="{{url_for('coal')}}" class="btn btn-primary">Botón de la sección</a>
+    </div>
+  </section>
+  <section id="eolica" class="image-section">
+    <img src="{{url_for('static', filename='imagenes/eolica.webp')}}" alt="Imagen de eolica" class="img-fluid">
+    <div class="text-overlay">
+      <h3>Energía eólica</h3>
+      <p>La energía eólica aprovecha la fuerza del viento para generar electricidad de manera limpia y renovable.
+        Además, es una de las fuentes de energía más antiguas, utilizada desde hace miles de años en molinos de viento.
+      </p>
+      <a href="{{url_for('eolica')}}" class="btn btn-primary">Botón de la sección</a>
+    </div>
+  </section>
+  <section id="gas-natural" class="image-section">
+    <img src="{{url_for('static', filename='imagenes/gas-natural.jpg')}}" alt="Imagen de gas natural" class="img-fluid">
+    <div class="text-overlay">
+      <h3>Gas natural</h3>
+      <p> El gas natural es una fuente de energía fósil que se extrae directamente de la naturaleza y llega a los
+        consumidores sin apenas transformaciones químicas. Es el combustible fósil más limpio, ya que emite menos gases
+        contaminantes que el petróleo o el carbón.</p>
+      <a href="{{url_for('gasNatural')}}" class="btn btn-primary">Botón de la sección</a>
+    </div>
+  </section>
+  <section id="hidraulica" class="image-section">
+    <img src="{{url_for('static', filename='imagenes/hidraulica.jpg')}}" alt="Imagen de hidraulica" class="img-fluid">
+    <div class="text-overlay">
+      <h3>Energía hidráulica</h3>
+      <p>La energía hidráulica no solo genera electricidad de manera limpia y renovable, sino que también puede ayudar a
+        controlar inundaciones y proporcionar agua para riego agrícola.</p>
+      <a href="{{url_for('hidraulica')}}" class="btn btn-primary">Botón de la sección</a>
+    </div>
+  </section>
+  <section id="nuclear" class="image-section">
+    <img src="{{url_for('static', filename='imagenes/nuclear.jpg')}}" alt="Imagen de nuclear" class="img-fluid">
+    <div class="text-overlay">
+      <h3>Energía nuclear</h3>
+      <p>La energía nuclear no solo se utiliza para generar electricidad, sino que también tiene aplicaciones en la
+        medicina. Por ejemplo, los isótopos radiactivos, como el cobalto-60, se utilizan en la radioterapia para tratar
+        el cáncer, ya que pueden destruir las células cancerígenas sin dañar demasiado los tejidos sanos.</p>
+      <a href="{{ url_for('nuclear') }}" class="btn btn-primary">Botón de la sección</a>
+    </div>
+  </section>
+  <section id="petroleo" class="image-section">
+    <img src="{{url_for('static', filename='imagenes/petroleo.jpg')}}" alt="Imagen de petroleo" class="img-fluid">
+    <div class="text-overlay">
+      <h3>Petroleo y derivados del petroleo</h3>
+      <p>El petróleo no solo se usa para combustibles, sino que también es la base de muchos productos cotidianos como
+        plásticos, champús y medicamentos. ¡Es sorprendente cómo este recurso impacta nuestra vida diaria!
+      </p>
+      <a href="{{url_for('petroleo')}}" class="btn btn-primary">Botón de la sección</a>
+    </div>
+  </section>
+  <section id="solar" class="image-section">
+    <img src="{{url_for('static', filename='imagenes/solar.jpg')}}" alt="Imagen de solar" class="img-fluid">
+    <div class="text-overlay">
+      <h3>Energía solar</h3>
+      <p>La energía solar es la fuente de energía más abundante en la Tierra? Cada hora, la Tierra recibe suficiente
+        energía solar para satisfacer todas las necesidades energéticas de la humanidad durante un año entero.
+      </p>
+      <a href="{{url_for('solar')}}" class="btn btn-primary">Botón de la sección</a>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="{{url_for('static', filename='js/index.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+</body>
+</html>
