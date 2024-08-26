@@ -1,0 +1,45 @@
+^AORD,Australia,All ordinaries
+^ATX,Austria,Austrian Traded Index in EUR
+^BFX,Belgium,BEL 20
+^GSPTSE,Canada,S&P-TSX Composite index
+^IPSA,Chile,S&P IPSA
+COPUSD=X,Colombia,COP-USD
+S0705.MC,Costa Rica,Costa Rica Inversiones SICAV S.A.
+^NQCZN,Czech Republic,NASDAQ Czech Republic Index
+^OMXC25,Denmark,OMX Copenhagen 25
+^OMXTGI,Estonia,Tallinn SE General
+^OMXH25,Finland,OMX Helsinki 25
+^FCHI,France,CAC 40
+^GDAXI,Germany,DAX
+GREK,Greece,Global X MSCI Greece ETF
+^BUX.BD,Hungary,Budapest Stock Index
+ISKUSD=X,Iceland,ISK-USD
+^ISEQ,Ireland,ISEQ All Share
+EURUSD=X,Italy,EUR-USD
+^N225,Japan,Nikkei 225
+^KS11,Korea,KOSPI
+EURUSD=X,Latvia,EUR-USD
+^OMXVGI,Lithuania,OMX Vilnius GI
+^MXX,Mexico,IPC MEXICO
+^AEX,Netherlands,AEX
+^NZ50,New Zealand,NZX 50
+NOKUSD=X,Norway,NOK-USD
+PLNUSD=X,Poland,PLN-USD
+PSI20.LS,Portugal,PSI
+SK9A.DE,Slovakia,Expat Slovakia Sax UCITS ETF
+SLQX.DE,Slovenia,Expat Slovenia Sax UCITS ETF
+^IBEX,Spain,IBEX 35
+SEKUSD=X,Sweden,SEK-USD
+CHFUSD=X,Switzerland,CHF-USD
+XU100.IS,Republic of Turkiye,BIST 100
+^FTSE,United Kingdom,FTSE 100
+^GSPC,United States,S&P 500
+^STOXX50E,Europe,ESTX 50 PR.EUR
+ARSUSD=X,Argentina,ARS-USD
+BRLUSD=X,Brazil,BRL-USD
+BGNUSD=X,Bulgaria,BGN-USD
+000001.SS,People's Republic of China,SSE Composite Index
+EURUSD=X,Croatia,EUR-USD
+0P00014HQ0.SA,Cyprus,Sueste Cyprus FIM C Priv IE
+^NSEI,India,NIFTY 50
+RONUSD=X,Romania,RON-USLD

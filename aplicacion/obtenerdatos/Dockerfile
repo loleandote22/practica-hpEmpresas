@@ -8,6 +8,7 @@ RUN pip install python-dateutil
 RUN mkdir /home/obtenerdatos
 COPY pruebaconsumo.py pruebaconsumo.py
 COPY pruebayahoo.py pruebayahoo.py
+COPY auxiliar.py auxiliar.py
 COPY indices.txt indices.txt
 COPY start.sh start.sh
 

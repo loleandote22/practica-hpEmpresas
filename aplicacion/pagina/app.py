@@ -7,28 +7,28 @@ def index():
 @app.route('/inicio')
 def inicio():
     return render_template('index.html')
-@app.route('/coal')
-def coal():
-    return render_template('carbon/coal.html')
 @app.route('/<producto>/<pais>')
 def carbon_indice(producto,pais):
-    return render_template(f'carbon/carbonGrafico.html')
-@app.route('/eolica')
-def eolica():
-    return render_template('eolica.html')
-@app.route('/gasNatural')
-def gasNatural():
-    return render_template('gasNatural.html')
-@app.route('/hidraulica')
-def hidraulica():
-    return render_template('hidraulica.html')
+    return render_template(f'grafico.html')
+@app.route('/coal')
+def coal():
+    return render_template('producto.html')
+@app.route('/wind')
+def wind():
+    return render_template('producto.html')
+@app.route('/natural')
+def natural():
+    return render_template('producto.html')
+@app.route('/hydro')
+def hydro():
+    return render_template('producto.html')
 @app.route('/nuclear')
 def nuclear():
-    return render_template('nuclear.html')
-@app.route('/petroleo')
-def petroleo():
-    return render_template('petroleo.html')
+    return render_template('producto.html')
+@app.route('/oil')
+def oil():
+    return render_template('producto.html')
 @app.route('/solar')
 def solar():
-    return render_template('solar.html')
+    return render_template('producto.html')
 app.run(debug=True)

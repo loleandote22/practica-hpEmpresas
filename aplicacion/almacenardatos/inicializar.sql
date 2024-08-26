@@ -1,25 +1,26 @@
 CREATE DATABASE IF NOT EXISTS aplicacionkafka;
 USE aplicacionkafka;
-CREATE TABLE IF NOT EXISTS paises (
-    nombre VARCHAR(50) PRIMARY KEY,
-    capital VARCHAR(50)
+CREATE TABLE IF NOT EXISTS indices (
+    codigo VARCHAR(50),
+    pais VARCHAR(255) PRIMARY KEY,
+    indice VARCHAR(255)
 );
-CREATE TEMPORARY TABLE temp_paises (
-    nombre VARCHAR(50),
-    capital VARCHAR(50),
-    indice VARCHAR(50)
+CREATE TEMPORARY TABLE temp_indices (
+    codigo VARCHAR(50),
+    pais VARCHAR(255) PRIMARY KEY,
+    indice VARCHAR(255)
 );
 
 -- Cargar los datos del archivo en la tabla temporal
-LOAD DATA INFILE '/var/lib/mysql-files/paises.txt'
-INTO TABLE temp_paises
+LOAD DATA INFILE '/var/lib/mysql-files/indices.txt'
+INTO TABLE temp_indices
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
-(nombre, capital, indice);
+(codigo, pais, indice);
 
--- Insertar los datos de la tabla temporal en la tabla paises
-INSERT INTO paises (nombre, capital)
-SELECT nombre, capital FROM temp_paises;
+-- Insertar los datos de la tabla temporal en la tabla indices
+INSERT INTO indices (codigo, pais, indice)
+SELECT codigo, pais, indice FROM temp_indices;
 
 -- Eliminar la tabla temporal
-DROP TEMPORARY TABLE temp_paises;
+DROP TEMPORARY TABLE temp_indices;

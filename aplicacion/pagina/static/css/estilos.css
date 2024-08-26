@@ -1,5 +1,5 @@
 .navbar {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5)); /* Degradado de blanco con 80% de opacidad a blanco con 50% de opacidad */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
 }
 
 
@@ -27,12 +27,12 @@
 .image-section {
   position: relative;
   display: inline-block; 
-  width: 100%; /* Ancho de la ventana */
-  height: 100vh; /* Alto de la ventana */
-  margin-bottom: -6px; /* Para asegurarse de que no haya espacio entre las imágenes */
+  width: 100%;
+  height: 100vh;
+  margin-bottom: -6px;
   padding: 0;
   margin-left: 0;
-  overflow: hidden; /* Para asegurarse de que la imagen no se desborde */
+  overflow: hidden;
 }
 
 .image-section img {

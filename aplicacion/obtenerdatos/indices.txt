@@ -3,7 +3,7 @@
 ^BFX,Belgium,BEL 20
 ^GSPTSE,Canada,S&P-TSX Composite index
 ^IPSA,Chile,S&P IPSA
-^SPCOSLCP,Colombia,S&P Colombia Select Index
+COPUSD=X,Colombia,COP-USD
 S0705.MC,Costa Rica,Costa Rica Inversiones SICAV S.A.
 ^NQCZN,Czech Republic,NASDAQ Czech Republic Index
 ^OMXC25,Denmark,OMX Copenhagen 25

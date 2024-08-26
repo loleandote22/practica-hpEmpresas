@@ -14,7 +14,7 @@ services:
       - "3307:3306"
     volumes:
       - db_data:/var/lib/mysql
-      - ./paises.txt:/var/lib/mysql-files/paises.txt
+      - ./indices.txt:/var/lib/mysql-files/indices.txt
       - ./inicializar.sql:/data/application/init.sql
     command: --init-file /data/application/init.sql
     networks:

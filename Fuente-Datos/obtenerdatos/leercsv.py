@@ -32,6 +32,17 @@ def insertarPaises():
         print(valores_unicos)
     return valores_unicos
 
+def rellenardatos(año, dato):
+    for ano in range(2010,año):
+        for mes in range(1,13):
+            fecha = datetime(ano,mes,1)
+            dato_insercion = dato.copy()
+            dato_insercion["Time"] = fecha
+            dato_insercion["Value"] = 0
+            dato_insercion.pop("Country")
+            db[pais].insert_one(dato_insercion)
+    
+
 def insertarDatos(paises):
     with open(csv_file_path, mode='r', newline='', encoding='utf-8') as csvfile:
         # Crear un lector de CSV
@@ -46,19 +57,14 @@ def insertarDatos(paises):
         # Insertar los datos en MongoDB
         if data:
             for pais in paises:
-                datos_pais = [dato for dato in data if dato["Country"] == pais and not dato["Product"].startswith("Total") and (dato["Balance"].startswith("Final Consumption") or dato["Balance"].startswith("Net Electricity Production"))]
+                datos_pais = [dato for dato in data if dato["Country"] == pais and not dato["Product"].startswith("Total") and  dato["Balance"].startswith("Net Electricity Production")]
                 datos_insercion = []
                 for dato in datos_pais:
                     if "Time" in dato:
                         try:
                             año = int(dato["Time"].split()[1])
-                            mes = meses.index(dato["Time"].split()[0].lower())+2
-                            dia = 1
-                            if mes == 13:
-                                fecha = datetime(año+1, 1, dia)
-                            else:
-                                fecha = datetime(año, mes, dia)
-                            fecha = fecha - timedelta(days=1)
+                            mes = meses.index(dato["Time"].split()[0].lower())+1
+                            fecha = datetime(año, mes, 1)
                             dato_insercion= dato.copy()
                             dato_insercion["Time"] = fecha
                             if dato_insercion["Value"] == "":
