@@ -1,11 +1,8 @@
 // const { PopupCancelledError } = require("@auth0/auth0-spa-js");
+const elemento = document.getElementById("caja");
+const elementoOculto = document.getElementById("caja2");
 
-// js/index.js
-function hacer() {
-  alert('Botón clicado');
-  location.reload();
-}
-function hacer2(response) {
+function login(response) {
   const responsePayload = decodeJwtResponse(response.credential);
      console.log("ID: " + responsePayload.sub);
      console.log('Full Name: ' + responsePayload.name);
@@ -13,6 +10,14 @@ function hacer2(response) {
      console.log('Family Name: ' + responsePayload.family_name);
      console.log("Image URL: " + responsePayload.picture);
      console.log("Email: " + responsePayload.email);
+     const nombreUsuario = document.getElementById("nombreUsuario");
+     const nombre = responsePayload.given_name.split(" ")[0];
+     nombreUsuario.textContent = nombre;
+     const imagenUsuario = document.getElementById("imagenUsuario");
+     imagenUsuario.src= responsePayload.picture;
+     sessionStorage.setItem("nombre", nombre);
+     sessionStorage.setItem("imagen", responsePayload.picture);
+     alert('Hola '+nombre);
      ocultarElemento();
 
 }
@@ -31,23 +36,21 @@ function decodeJwtResponse(token) {
 }
 
 function ocultarElemento() {
-  var elemento = document.getElementById("caja");
-  if (elemento) {
     elemento.style.display = 'none';
-  }
+    elementoOculto.style.display = 'flex'
 }
-function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+function mostrarElemento() {
+    elemento.style.display = 'flex';
+    elementoOculto.style.display = 'none'
 }
 function signOut() {
-  const auth2 = gapi.auth2.getAuthInstance();
-  auth2.signOut().then(function () {
-    console.log('User signed out.');
-  });
+  sessionStorage.removeItem("nombre");
+  sessionStorage.removeItem("imagen");
+  mostrarElemento();
+  // const auth2 = gapi.auth2.getAuthInstance();
+  // auth2.signOut().then(function () {
+  //   console.log('User signed out.');
+  // });
 }
 
 function init() {
@@ -55,3 +58,15 @@ function init() {
     gapi.auth2.init();
   });
 }
+function comprobarSesion() {
+  const nombre = sessionStorage.getItem("nombre");
+  if (nombre) {
+    const nombreUsuario = document.getElementById("nombreUsuario");
+    nombreUsuario.textContent = nombre;
+    const imagen = sessionStorage.getItem("imagen");
+    const imagenUsuario = document.getElementById("imagenUsuario");
+    imagenUsuario.src= imagen;
+    ocultarElemento();
+  }
+}
+document.addEventListener("DOMContentLoaded", comprobarSesion);
