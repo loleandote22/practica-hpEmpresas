@@ -10,11 +10,47 @@ function obtenerInfoRuta() {
     console.log("Pais: " + pais);
     getData(pais, producto);
 }
+function calcularCovarianza(arr1, arr2) {
+    if (arr1.length !== arr2.length) {
+        throw new Error('Los arrays deben tener la misma longitud');
+    }
+
+    const n = arr1.length;
+
+    // Calcular las medias de los arrays
+    const mediaArr1 = arr1.reduce((acc, val) => acc + val, 0) / n;
+    const mediaArr2 = arr2.reduce((acc, val) => acc + val, 0) / n;
+
+    // Calcular la covarianza
+    let sumaCovarianza = 0;
+    for (let i = 0; i < n; i++) {
+        sumaCovarianza += (arr1[i] - mediaArr1) * (arr2[i] - mediaArr2);
+    }
+
+    return sumaCovarianza / n;
+}
 async function getData(pais, producto) {
 
     try {
         const jsonData = await obtenerCotizacion(pais);
         const jsonData2 = await obtenerEnergia(producto, pais);
+        let datosCotizacion = jsonData[2];
+        let datosEnergia = jsonData2[2];
+        const tamanoCotizacion = datosCotizacion.length;
+        const tamanoEnergia = datosEnergia.length;
+        if(tamanoCotizacion > tamanoEnergia)
+        {
+            datosCotizacion = datosCotizacion.slice(tamanoCotizacion - tamanoEnergia);
+            
+        
+        }else if(tamanoEnergia > tamanoCotizacion){
+            datosEnergia = datosEnergia.slice(tamanoEnergia - tamanoCotizacion);
+        }
+        
+        const cierres = datosCotizacion.map(item => item.cierre);
+        const valores = datosEnergia.map(item => item.Value);
+        const covarianza = calcularCovarianza(cierres, valores);
+        console.log("Covarianza: " + covarianza);
         initLineChart(jsonData[0], jsonData[1], jsonData[2], jsonData[3], jsonData2[0], jsonData2[1], jsonData2[2]);
         console.log(jsonData);
     } catch (error) {

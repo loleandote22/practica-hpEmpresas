@@ -17,7 +17,8 @@ function login(response) {
      imagenUsuario.src= responsePayload.picture;
      sessionStorage.setItem("nombre", nombre);
      sessionStorage.setItem("imagen", responsePayload.picture);
-     alert('Hola '+nombre);
+     console.log("imagen: "+responsePayload.picture);
+     //alert('Hola '+nombre);
      ocultarElemento();
 
 }
@@ -55,7 +56,10 @@ function signOut() {
 
 function init() {
   gapi.load('auth2', function() {
-    gapi.auth2.init();
+    gapi.auth2.init()
+    {
+      client_id : '731724841818-fv7v54nb8gk2vh5bgecp9qfr41nq4odj.apps.googleusercontent.com';
+    };
   });
 }
 function comprobarSesion() {

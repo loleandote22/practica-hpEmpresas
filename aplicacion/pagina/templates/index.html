@@ -53,16 +53,20 @@
         </ul>
       </div>
       <div id="caja">
-        <div id="g_id_onload"
-          data-client_id="731724841818-fv7v54nb8gk2vh5bgecp9qfr41nq4odj.apps.googleusercontent.com"
+        <div id="g_id_onload" data-client_id="731724841818-fv7v54nb8gk2vh5bgecp9qfr41nq4odj.apps.googleusercontent.com"
           data-callback="login">
         </div>
         <div class="g_id_signin" data-type="standard"></div>
       </div>
       <div id="caja2" class="container" style="display: none; align-items: center; width: auto;">
-        <img class="imagenUsuario" style="width: 30px; height: 30px; border-radius: 50%;" id="imagenUsuario" alt="Imagen usuario"/>
-        <p id="nombreUsuario" style="margin-left: 10px; margin-right: 10px; margin-top: 15px;" class="nombreUsuario"></p>
-        <button id="logout-button" onclick="signOut()" class="btn btn-danger">Cerrar sesión</button>
+        <img class="imagenUsuario" style="width: 30px; height: 30px; border-radius: 50%;" id="imagenUsuario"
+          alt="Imagen usuario" />
+        <p id="nombreUsuario" style="margin-left: 10px; margin-right: 10px; margin-top: 15px;" class="nombreUsuario">
+        </p>
+        <button id="logout-button" onclick="signOut()" class="btn">
+          <img src="{{url_for('static', filename='imagenes/logout.svg')}}" style=" height: 30px"
+            alt="Icono de cerrar sesión" class="img-fluid" />
+        </button>
       </div>
     </div>
   </nav>
@@ -161,5 +165,4 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
   <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
 </body>
-
 </html>

@@ -59,7 +59,10 @@
                     alt="Imagen usuario" />
                 <p id="nombreUsuario" style="margin-left: 10px; margin-right: 10px; margin-top: 15px;"
                     class="nombreUsuario"></p>
-                <button id="logout-button" onclick="signOut()" class="btn btn-danger">Cerrar sesión</button>
+                <button id="logout-button" onclick="signOut()" class="btn">
+                    <img src="{{url_for('static', filename='imagenes/logout.svg')}}" style=" height: 30px"
+                        alt="Icono de cerrar sesión" class="img-fluid" />
+                </button>
             </div>
         </div>
     </nav>
@@ -72,7 +75,6 @@
     <script src="{{url_for('static', filename='js/index.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
     <script src="{{url_for('static', filename='js/grafico.js')}}"></script>
     <script>
         obtenerInfoRuta();
