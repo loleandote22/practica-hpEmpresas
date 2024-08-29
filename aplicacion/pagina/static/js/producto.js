@@ -2,11 +2,15 @@ let jsonData = [];
 let sortOrder = {};
 let producto = "";
 let i = 1;
+
+// #region Función de inicio
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('indice-header').addEventListener('click', () => sortTable('indice'));
     document.getElementById('pais-header').addEventListener('click', () => sortTable('pais'));
     obtenerInfoRuta();
 });
+
+
 function obtenerInfoRuta() {
     let currentURL = window.location.href;
     currentURL = currentURL.replace(/%20/g, " ");
@@ -14,6 +18,9 @@ function obtenerInfoRuta() {
     producto = currentURL.substring(lastSlashIndex + 1);
     getData();
 }
+
+// #endregion
+// #region Funciones de tabla
 async function getData() {
     const url = "http://localhost:5002/cotizaciones";
     try {
@@ -21,7 +28,6 @@ async function getData() {
         if (!response.ok) {
             throw new Error(`Response status: ${response.status}`);
         }
-
         jsonData = await response.json();
         console.log(jsonData);
         renderTable(jsonData);
@@ -70,3 +76,4 @@ function sortTable(column) {
         i = 1;
     console.log(i);
 }
+// #endregion

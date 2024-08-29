@@ -44,3 +44,9 @@ Periodos de tiempo, hay otros documentos de la misma agencia que ofrecen datos e
 | 2022 | Mensual |   
 | 2023 | Mensual |   
 | 2024 | Mensual |
+
+
+
+Paginas curiosas
+Eslovenia sin tendencia y correlación muy debil [(http://192.168.1.105:5000/coal/Slovenia)]
+Islandia sin correlacion

@@ -43,6 +43,7 @@ services:
     networks:
       - kafka_red
   mandardatos:
+    container_name: datos_pagina
     depends_on:
       - kafka
       - db
@@ -51,6 +52,17 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5002:5000"
+    networks:
+      - kafka_red
+  pagina:
+    container_name: pagina
+    depends_on:
+      - mandardatos
+    build:
+      context: ../pagina
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
     networks:
       - kafka_red
 volumes:

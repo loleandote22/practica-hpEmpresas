@@ -1,15 +1,9 @@
-// const { PopupCancelledError } = require("@auth0/auth0-spa-js");
 const elemento = document.getElementById("caja");
 const elementoOculto = document.getElementById("caja2");
 
 function login(response) {
   const responsePayload = decodeJwtResponse(response.credential);
-     console.log("ID: " + responsePayload.sub);
-     console.log('Full Name: ' + responsePayload.name);
-     console.log('Given Name: ' + responsePayload.given_name);
-     console.log('Family Name: ' + responsePayload.family_name);
-     console.log("Image URL: " + responsePayload.picture);
-     console.log("Email: " + responsePayload.email);
+     
      const nombreUsuario = document.getElementById("nombreUsuario");
      const nombre = responsePayload.given_name.split(" ")[0];
      nombreUsuario.textContent = nombre;
@@ -17,8 +11,6 @@ function login(response) {
      imagenUsuario.src= responsePayload.picture;
      sessionStorage.setItem("nombre", nombre);
      sessionStorage.setItem("imagen", responsePayload.picture);
-     console.log("imagen: "+responsePayload.picture);
-     //alert('Hola '+nombre);
      ocultarElemento();
 
 }
@@ -48,10 +40,6 @@ function signOut() {
   sessionStorage.removeItem("nombre");
   sessionStorage.removeItem("imagen");
   mostrarElemento();
-  // const auth2 = gapi.auth2.getAuthInstance();
-  // auth2.signOut().then(function () {
-  //   console.log('User signed out.');
-  // });
 }
 
 function init() {

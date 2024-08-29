@@ -29,3 +29,25 @@ a {
         background-position: 0% 50%;
     }
 }
+
+#myPieChart {
+    max-width: 300px;
+    max-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-caja-analisis {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan si no caben en una sola línea */
+}
+
+.caja-analisis {
+    flex: 1 1 auto; /* Permite que los elementos se ajusten automáticamente */
+    margin: 10px; /* Espacio entre los elementos */
+    border: 2px solid #000; /* Color y grosor del borde */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 10px; /* Espacio interno */
+    height: auto; /* Ajusta la altura automáticamente según el contenido */
+}

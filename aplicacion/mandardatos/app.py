@@ -38,7 +38,6 @@ def energia(pais,producto):
 	conexion = conectar()
 	datos = apienergia.obtener_energia(conexion,pais,producto)
 	response = jsonify(datos)
-	print(response)
 	response.headers.add("Access-Control-Allow-Origin", "*")
 	return response
 if __name__ == '__main__':
